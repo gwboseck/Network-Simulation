@@ -8,7 +8,6 @@ typedef struct node {
 }node;
 
 struct queue {
-	/* TODO Phase 1 */
 	int size;
 	node * head;
 	node * tail;
@@ -16,7 +15,6 @@ struct queue {
 
 queue_t queue_create(void)
 {
-	/* TODO Phase 1 */
 	queue_t newQ;
 	newQ = (struct queue *) malloc(sizeof(struct queue));
 	newQ->size = 0;
@@ -25,7 +23,6 @@ queue_t queue_create(void)
 
 int queue_destroy(queue_t queue)
 {
-	/* TODO Phase 1 */
 	//Queue must be empty
 	if(queue == NULL)
 	{
@@ -75,12 +72,10 @@ int queue_enqueue(queue_t queue, void *data)
 	}// If queue is not empty then attach new node to previous tail and change tail
 	queue->size++;
 	return 0;
-	/* TODO Phase 1 */
 }
 
 int queue_dequeue(queue_t queue, void **data)
 {
-	/* TODO Phase 1 */
 	if(data == NULL || queue == NULL)
 	{
 		// printf("Dequeue Error: Queue or Data is NULL \n");
@@ -101,11 +96,10 @@ int queue_dequeue(queue_t queue, void **data)
 	// printf("Queue->head->data is %i \n", *(int*)*data);
 	queue->size -= 1;
 	return 0;
-} 
+}
 
 int queue_delete(queue_t queue, void *data)
 {
-	/* TODO Phase 1 */
 	if(queue == NULL || data == NULL || queue->size == 0)
 	{
 		// printf("Delete Error: Queue is NULL, Data is NULL, or QSize is 0 \n");
@@ -147,17 +141,13 @@ int queue_delete(queue_t queue, void *data)
 		deleteN = NULL;
 	} //Otherwise remove the link in the queue for this item
 	return 0;
-	
-
-
 }
 
 int queue_iterate(queue_t queue, queue_func_t func, void *arg, void **data)
 {
-	/* TODO Phase 1 */
 	int index = 0;
 	node * temp = queue->head;
-	
+
 
 	while(index != queue->size)
 	{
@@ -165,14 +155,13 @@ int queue_iterate(queue_t queue, queue_func_t func, void *arg, void **data)
 		temp = temp->next;
 		index++;
 	}
-	
-	return 0; 
+
+	return 0;
 	// while index doesn't equal length
 }
 
 int queue_length(queue_t queue)
 {
-	/* TODO Phase 1 */
 	if(queue == NULL)
 	{
 		// printf("Length Error: Queue is NULL \n");
